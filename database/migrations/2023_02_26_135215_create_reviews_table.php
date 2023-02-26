@@ -20,7 +20,7 @@ class CreateReviewsTable extends Migration
             $table->string('title');
             $table->text('comment');
             $table->integer('five_star');
-            $table->string('img_path')->nullable();
+            $table->text('img_path')->nullable();
             $table->timestamps();
         });
     }
