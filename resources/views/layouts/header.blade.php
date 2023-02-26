@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm tabelog-header-container">
-<link href="{{ asset('css/head.css') }}" rel="stylesheet">
+<link href="{{ mix('css/head.css') }}" rel="stylesheet">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="{{asset('css/images/logo.jpg')}}" width='150' height='40'>
+            <img src="{{ mix('css/images/logo.jpg')}}" width='150' height='40'>
         </a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
