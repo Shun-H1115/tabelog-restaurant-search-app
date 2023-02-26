@@ -44,20 +44,15 @@
                 </div>
                 <br>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                 <div class="d-flex justify-content-between">
                         <label for="img" class="text-md-left tabelog-edit-user-info-label">画像</label>
                     </div>
                     <div class="collapse show editUserImg">
                         <input id="img" type="file" class="form-control @error('img') is-invalid @enderror" name="img" value="{{ $user->img_path }}" required autocomplete="img" autofocus placeholder="XXX-XXXX">
-                        @error('img')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>アイコン画像を選択してください</strong>
-                        </span>
-                        @enderror
                     </div>
                 </div>
-                <br>
+                <br> -->
 
                 
                 <hr>
