@@ -2,7 +2,7 @@
 <link href="{{ mix('css/head.css') }}" rel="stylesheet">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="{{ mix('css/images/logo.jpg')}}" width='150' height='40'>
+            <img src="{{ mix('css/images/logo.png')}}" width='150' height='40'>
         </a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
