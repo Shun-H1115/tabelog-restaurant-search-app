@@ -18,13 +18,12 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [ShopController::class, 'index']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'top'])->name('top');
 
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/top', [App\Http\Controllers\HomeController::class, 'top'])->name('top');
 
 Route::post('reviews/store', [ReviewController::class, 'store'])->name('reviews.store')->middleware('auth');
 Route::get('reviews/get/create', [ReviewController::class, 'create'])->name('reviews.create.get')->middleware('auth');
