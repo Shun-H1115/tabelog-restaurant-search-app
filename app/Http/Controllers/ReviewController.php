@@ -77,7 +77,7 @@ class ReviewController extends Controller
 
         if($request->img){
             if($request->img->extension() == 'jpeg' || $request->img->extension() == 'jpg' || $request->img->extension() == 'png'){
-                $reviews->$img_path = base64_encode(file_get_contents($request->img->getRealPath()));
+                $reviews->$img_path = base64_encode(file_get_contents($request->img));
             }else{
                 $flash_message = '投稿可能なファイルは jpeg / jpg / png のみです。';
                 $reviews->img_path = NULL;

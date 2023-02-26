@@ -55,7 +55,7 @@
 
                 <div>
                     <h4>画像をアップロード</h4>
-                    <input type="file" name="img" accept="image/*">
+                    <input type="file" name="img">
 
                     <input type="hidden" name="shop_id" value="{{ $shops_info->id }}">
                     <button type="submit" class="btn tabelog-submit-button ml-2">レビューを投稿</button>

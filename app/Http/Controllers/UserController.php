@@ -43,7 +43,7 @@ class UserController extends Controller
         $user->email = $request->input('email') ? $request->input('email') : $user->email;
         if($request->img){
             if($request->img->extension() == 'jpeg' || $request->img->extension() == 'jpg' || $request->img->extension() == 'png'){
-                $user->img_path = base64_encode(file_get_contents($request->img->getRealPath()));
+                $user->img_path = base64_encode(file_get_contents($request->img));
             }else{
                 $flash_message = '投稿可能なファイルは jpeg / jpg / png のみです。';
                 $user->img_path = NULL;
