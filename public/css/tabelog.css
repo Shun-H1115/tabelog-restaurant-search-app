@@ -1,0 +1,116 @@
+.tabelog-login-input {
+    border-radius: 2px;
+    border: solid 1px #b2b2b2;
+    background-color: #ffffff;
+}
+
+.tabelog-check-label {
+    font-family: YuGo;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.tabelog-require-input-label {
+    border-radius: 1px;
+    background-color: #e2001b;
+}
+
+.tabelog-require-input-label-text {
+    font-family: YuGo;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.tabelog-submit-button {
+    font-family: YuGo;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    background-color: #FFC000;
+}
+
+.tabelog-login-text {
+    font-family: YuGo;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #FFC000;
+}
+
+
+body {
+    margin: 1.5rem;
+    background-color: #FFF2CC;
+}
+
+article {
+	display: flex;
+	margin: 10px;
+	padding: 20px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	box-shadow: 0 0 5px #999;
+}
+	article figure {
+		margin-right: 20px;
+		width: auto;
+		height: 100%;
+	}
+		article figure img {
+			min-width: 100px;
+			max-width: 100%;
+			vertical-align: top;
+		}
+
+.review-box {
+	margin: 10px;
+	padding: 20px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	box-shadow: 0 0 5px #999;
+}
+.review-boxes {
+    margin: 10px;
+	padding: 20px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	box-shadow: 0 0 5px #999;
+}
+
+td {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+th {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: solid 1px #000000;
+  }

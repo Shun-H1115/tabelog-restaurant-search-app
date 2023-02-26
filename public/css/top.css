@@ -1,0 +1,16 @@
+body {
+    width: 100%;
+    height:100vh;
+    background-image: url(images/backimg.jpg);  
+    background-position: center top; 
+    background-repeat: no-repeat;  
+    background-attachment: fixed; 
+    background-size: cover;
+   }
+
+.shops-link {
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 0rem 1.5rem 0rem 0rem;
+}
+
