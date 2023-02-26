@@ -33,9 +33,9 @@ Route::resource('reviews', ReviewController::class)->only(['show', 'update', 'de
 
 
 Route::resource('shops', ShopController::class)->only(['index', 'store'])->middleware('auth');
-Route::get('reviews/get/{shop_id}', [ShopController::class, 'show_v2'])->name('reviews.show.get')->middleware('auth');
-Route::post('reviews/{shop_id}', [ShopController::class, 'show'])->name('reviews.show')->middleware('auth');
-Route::get('shops/ranking', [ShopController::class, 'ranking'])->name('shops.ranking')->middleware('auth');
+Route::get('reviews/get/{shop_id}', [ShopController::class, 'show_v2'])->name('reviews.show.get');
+Route::post('reviews/{shop_id}', [ShopController::class, 'show'])->name('reviews.show');
+Route::get('shops/ranking', [ShopController::class, 'ranking'])->name('shops.ranking');
 
 Route::get('favorites', [FavoriteController::class, 'index'])->name('favorite.index')->middleware('auth');
 Route::get('favorites/{shop_id}', [FavoriteController::class, 'store'])->name('favorite')->middleware('auth');

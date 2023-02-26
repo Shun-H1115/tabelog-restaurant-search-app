@@ -26,23 +26,26 @@
             <p>営業時間：{{{ $shops->open }}}</p>
             <p><a href="{{{ $shops->urls }}}">{{{ $shops->urls }}}</a></p>
         
-            @if (in_array($shops->id, $favorites_shop_ids))
-                <!-- 「お気に入り」取消用ボタンを表示 -->
-                <form action="{{ route('unfavorite', $shops->id) }}" method="post">
-                    @csrf
-                    <input type="hidden" name="shop_id" value="{{ $shops->id }}">
-                    <input type="hidden" name="shop_shop_id" value="{{ $shops->shop_id }}">
-                    <button type="submit" class="btn btn-primary">★ お気に入り</button>
-                </form> 
+            @guest
             @else
-                <!-- まだユーザーが「お気に入り」をしていなければ、「お気に入り」ボタンを表示 -->
-                <form action="{{ route('favorite', $shops->id) }}" method="post">
-                    @csrf
-                    <input type="hidden" name="shop_id" value="{{ $shops->id }}">
-                    <input type="hidden" name="shop_shop_id" value="{{ $shops->shop_id }}">
-                    <button type="submit" class="btn btn-primary">☆ お気に入り</button>
-                </form>
-            @endif
+                @if (in_array($shops->id, $favorites_shop_ids))
+                    <!-- 「お気に入り」取消用ボタンを表示 -->
+                    <form action="{{ route('unfavorite', $shops->id) }}" method="post">
+                        @csrf
+                        <input type="hidden" name="shop_id" value="{{ $shops->id }}">
+                        <input type="hidden" name="shop_shop_id" value="{{ $shops->shop_id }}">
+                        <button type="submit" class="btn btn-primary">★ お気に入り</button>
+                    </form> 
+                @else
+                    <!-- まだユーザーが「お気に入り」をしていなければ、「お気に入り」ボタンを表示 -->
+                    <form action="{{ route('favorite', $shops->id) }}" method="post">
+                        @csrf
+                        <input type="hidden" name="shop_id" value="{{ $shops->id }}">
+                        <input type="hidden" name="shop_shop_id" value="{{ $shops->shop_id }}">
+                        <button type="submit" class="btn btn-primary">☆ お気に入り</button>
+                    </form>
+                @endif
+            @endguest
         </div>
 
         <div>
@@ -54,11 +57,14 @@
     <!-- レビューの表示 -->
     <div class="review-boxes">
         <h3>カスタマーレビュー</h3>
-        <form action="{{ route('reviews.create') }}" method="post">
-            @csrf
-            <input type="hidden" name="shop_id" value="{{ $shops->id }}">
-            <button type="submit" class="btn btn-primary">レビューを投稿する</button>
-        </form>
+        @guest
+        @else
+            <form action="{{ route('reviews.create') }}" method="post">
+                @csrf
+                <input type="hidden" name="shop_id" value="{{ $shops->id }}">
+                <button type="submit" class="btn btn-primary">レビューを投稿する</button>
+            </form>
+        @endguest
 
         @foreach($reviews as $review)
         <div class="review-box">
@@ -82,26 +88,29 @@
             @elseif ((optional($review)->img_path) == NULL)
             @endif               
         
-            @if (in_array(($review)->id, $goodtag_review_ids))
-                <!-- 「いいね」取消用ボタンを表示 -->
-                <a href="{{ route('ungoodtag', $review->id) }}" class="btn btn-success btn-sm">
-                    いいね
-                    <!-- 「いいね」の数を表示 -->
-                    <span class="badge"> 
-                        {{ $review->goodtags->count() }}
-                    </span>
-                </a> 
+            @guest
             @else
-                <!-- まだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
-                <a href="{{ route('goodtag', $review->id) }}" class="btn btn-secondary btn-sm">
-                    いいね
-                    <!-- 「いいね」の数を表示 -->
-                    <span class="badge">
-                        {{ $review->goodtags->count() }}
-                    </span>
-                </a>
-            @endif
-                </div>
+                @if (in_array(($review)->id, $goodtag_review_ids))
+                    <!-- 「いいね」取消用ボタンを表示 -->
+                    <a href="{{ route('ungoodtag', $review->id) }}" class="btn btn-success btn-sm">
+                        いいね
+                        <!-- 「いいね」の数を表示 -->
+                        <span class="badge"> 
+                            {{ $review->goodtags->count() }}
+                        </span>
+                    </a> 
+                @else
+                    <!-- まだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
+                    <a href="{{ route('goodtag', $review->id) }}" class="btn btn-secondary btn-sm">
+                        いいね
+                        <!-- 「いいね」の数を表示 -->
+                        <span class="badge">
+                            {{ $review->goodtags->count() }}
+                        </span>
+                    </a>
+                @endif
+            @endguest
+        </div>
         @endforeach
     </div>
 
