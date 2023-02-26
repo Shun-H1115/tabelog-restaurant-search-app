@@ -84,7 +84,7 @@
             
             <p>{{ optional($review)->comment }}</p>
             @if ((optional($review)->img_path) != NULL)
-                <figure><img src="data:image/png;base64,<?= img_path ?>" width='238' height='auto' ></figure>
+                <figure><img src="data:image/png;base64,<?= $review->img_path; ?>" width='238' height='auto' ></figure>
             @elseif ((optional($review)->img_path) == NULL)
             @endif               
         

@@ -27,7 +27,7 @@
                 <li class="nav-item mr-5">
                     <a class="nav-link" href="{{ route('mypage') }}">
                         @if ((optional($user)->img_path) != NULL)
-                            <img src="data:image/png;base64, <?=img_path?>" width='35' height='35'>
+                            <img src="data:image/png;base64, <? $user->img_path; ?>" width='35' height='35'>
                         @elseif ((optional($user)->img_path) == NULL)
                             <i class="fas fa-user mr-1"></i>
                         @endif
