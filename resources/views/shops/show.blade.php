@@ -21,7 +21,7 @@
             <img src="{{ $shops->img_path }}">
         </figure>
         <div class="text_content">
-            <h2>{{{ $shops->name }}}</h2>
+            <h2>{{{ $shops->name }}}  </h2>
             <p>住所：{{{ $shops->address }}}</p>
             <p>営業時間：{{{ $shops->open }}}</p>
             <p><a href="{{{ $shops->urls }}}">{{{ $shops->urls }}}</a></p>
