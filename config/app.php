@@ -82,6 +82,8 @@ return [
 
     'locale' => 'ja',
 
+    'log' => 'errorlog',
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
